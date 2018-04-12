@@ -1,0 +1,55 @@
+<!-- <ion-content center padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <button ion-button color="secondary" (click)="doLogin()">Login</button>
+    <button ion-button (click)="register()">Register</button>
+  </ion-list>
+  <ion-list>
+    <ion-item color="Primary">
+      {{loginStatus}}
+    
+      {{registerStatus}}
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+<ion-content center text-center class="loginContent">
+  <!-- <ion-grid> -->
+  <ion-row class="ionicRow" style="">
+    <div class="loginBlock">
+
+      <ion-list>
+        <span class="firstLetter">E</span><span>atAway</span>
+        <ion-item class="loginItem"></ion-item>
+        <ion-item class="loginItem">
+          <ion-label floating>
+            <ion-icon name="person"></ion-icon>Username</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item class="loginItem">
+          <ion-label floating>
+            <ion-icon name="key"></ion-icon>
+            Password</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+        <ion-item class="loginItem no-bottom-border">
+          <a class="signUpLabel" (click)="register()"y>SignUp</a>
+          <a class="forgotPassword">Forgot Password</a>
+          
+        </ion-item>
+        <ion-item class="loginItem buttonItem">
+          <button ion-button full color="secondary" (click)="doLogin()">Login</button>
+          <!-- <button ion-button (click)="register()">Register</button> -->
+        </ion-item>
+      </ion-list>
+    </div>
+  </ion-row>
+  <!-- </ion-grid> -->

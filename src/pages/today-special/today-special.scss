@@ -1,0 +1,35 @@
+page-today-special {
+
+}
+.todaySpecialRow{
+    // background: #f6f6f6;
+    border-bottom: 4px solid #c7cbca;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.imgSection{
+    width: 100%;
+    text-align: center;
+}
+.imgSection img{
+    height:  200px;
+    width:  100%;
+}
+.descriptionSection{
+    width: 100%;
+}
+.priceLabel{
+    float: right;
+    font-style: italic;
+}
+.descriptionSection .title{
+    font-size: 15px;
+    font-weight: bold;
+}
+.descriptionSection .desc{
+    font-size: 14px;
+    color: #749af3;
+}
+.no-margin{
+    margin:0;
+}

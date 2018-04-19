@@ -6,56 +6,113 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Eataway your hunger</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-<ion-content padding>
-  <ion-row class="todaySpecialRow">
-    <ion-col>
-      <div class="menuSection">
-        <button ion-button color="secondary">Snaks</button>
-        <button ion-button color="secondary">Lunch</button>
-      </div>
-    </ion-col>
-  </ion-row>
-  <ion-row class="todaySpecialRow">
-    <div class="menuSection">
-      <button ion-button color="secondary">Dinner</button>
-      <button ion-button color="secondary">Breakfast</button>
-    </div>
-  </ion-row>
-
-  <!--<ion-row class="todaySpecialRow">
-      <div class="imgSection">
-        <img src="../../assets/imgs/puttumkadalem.jpg" />
-      </div>
-      <div class="descriptionSection">
-        <ion-label class="title no-margin" no-padding>Puttum Kadalem</ion-label>
-        <ion-label class="desc no-margin">
-          Pure Veg
-          <span class="priceLabel">
-            RS:60.00
-          </span>
-        </ion-label>
-      </div>
-    </ion-row>
-
-      <ion-row class="todaySpecialRow">
-          <div class="imgSection">
-            <img src="../../assets/imgs/irachichoru.jpg" />
-          </div>
-          <div class="descriptionSection">
-            <ion-label class="title no-margin" no-padding>Irachi Chor</ion-label>
-            <ion-label class="desc no-margin">
-              Non Veg
-              <span class="priceLabel">
-                RS:130.00
-              </span>
-            </ion-label>
-          </div>
-        </ion-row>-->
-
-</ion-content>
+    <ion-navbar>
+      <ion-title>Eataway your hunger</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+  <div class="menu">
+    
+      <ion-row>
+        <ion-col class="menu-column" [navPush]="menuPage" (click)="showMenuDetails()">  
+          <ion-card>
+            <ion-list>
+              <button ion-item>
+                Breakfast
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+        <ion-col class="menu-column" [navPush]="menuPage" (click)="showMenuDetails()">
+          <ion-card>
+            <ion-list>
+              <button ion-item>
+                Lunch
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="menu-column" [navPush]="menuPage" (click)="showMenuDetails()">  
+          <ion-card>
+            <ion-list>
+              <button ion-item>
+                Dinner
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+        <ion-col class="menu-column" [navPush]="menuPage" (click)="showMenuDetails()">
+          <ion-card>
+            <ion-list>
+              <button ion-item>
+                Snaks
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="menu-column" [navPush]="menuPage" (click)="showMenuDetails()">  
+          <ion-card>
+            <ion-list>
+              <button ion-item>
+                
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+        <ion-col class="menu-column">
+          <ion-card>
+            <ion-list>
+              <button ion-item>
+                
+              </button>
+            </ion-list>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>  
+          <ion-card class="empty-region">
+            <ion-card-content>
+              <p></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+  </div>
+    <!--<ion-row class="todaySpecialRow">
+        <div class="imgSection">
+          <img src="../../assets/imgs/puttumkadalem.jpg" />
+        </div>
+        <div class="descriptionSection">
+          <ion-label class="title no-margin" no-padding>Puttum Kadalem</ion-label>
+          <ion-label class="desc no-margin">
+            Pure Veg
+            <span class="priceLabel">
+              RS:60.00
+            </span>
+          </ion-label>
+        </div>
+      </ion-row>
+  
+        <ion-row class="todaySpecialRow">
+            <div class="imgSection">
+              <img src="../../assets/imgs/irachichoru.jpg" />
+            </div>
+            <div class="descriptionSection">
+              <ion-label class="title no-margin" no-padding>Irachi Chor</ion-label>
+              <ion-label class="desc no-margin">
+                Non Veg
+                <span class="priceLabel">
+                  RS:130.00
+                </span>
+              </ion-label>
+            </div>
+          </ion-row>-->
+  
+  </ion-content>

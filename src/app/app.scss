@@ -14,3 +14,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.full-width{
+    width: 100%;
+}
+.menu-head{
+    border-bottom: 1px solid;
+    text-align: center;
+    display: block;
+    padding-bottom: 10px;
+    margin: 15px;
+    font-size: 16px;
+}
+.sub-menu{
+    text-align: center;
+    padding-bottom: 10px;
+    margin: 15px;
+    font-size: 14px;
+}
+.menu-item.active{
+    border-bottom: 1px solid blueviolet;
+    
+}

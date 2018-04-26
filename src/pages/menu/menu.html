@@ -1,17 +1,32 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Eat away your hunger</ion-title>
+    <ion-title>Eataway your hunger</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-row>
+  <ion-row class="full-width menu-head">
     Menu
   </ion-row>
-  <ion-card>
-
+  <ion-row class="sub-menu full-width" center>
+    <ion-col class="menu-item active">Dinner</ion-col>
+    <ion-col>Snaks</ion-col>
+    <ion-col>Lunch</ion-col>
+  </ion-row>
+  <ion-card class="menu">
+    <ion-slides>
+      <ion-slide>
+        <h1>Slide 1</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 2</h1>
+      </ion-slide>
+      <ion-slide>
+        <h1>Slide 3</h1>
+      </ion-slide>
+    </ion-slides>
   </ion-card>
 </ion-content>

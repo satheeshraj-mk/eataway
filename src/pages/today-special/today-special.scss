@@ -44,3 +44,15 @@ page-today-special {
     width: 100%;
     margin: 0px;
 }
+.chip{
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 25px;
+}
+.chip-button{
+    height: 54px;
+    pointer-events: none;
+}

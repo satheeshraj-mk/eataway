@@ -16,7 +16,7 @@ import {MenuPage} from '../menu/menu';
 })
 export class TodaySpecialPage {
   menuPage:any
-  
+  imageList=["../../assets/imgs/1.jpg","../../assets/imgs/2.png","../../assets/imgs/3.jpg","../../assets/imgs/4.jpg"];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

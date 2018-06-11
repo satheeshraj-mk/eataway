@@ -10,4 +10,5 @@ import { TodaySpecialPage } from './today-special';
     IonicPageModule.forChild(TodaySpecialPage),
   ],
 })
-export class TodaySpecialPageModule {}
+export class TodaySpecialPageModule {
+}

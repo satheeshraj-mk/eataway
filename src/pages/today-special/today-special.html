@@ -76,13 +76,12 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>  
-          <ion-card class="empty-region">
-            <ion-card-content>
-              <p></p>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
+            <ion-slides *ngIf="imageList && imageList.length" autoplay="5000" loop="true" speed="3000">
+                <ion-slide *ngFor="let img of imageList"> 
+                   <img src="{{img}}">
+                </ion-slide>
+              </ion-slides> 
+          
       </ion-row>
   </div>
     <!--<ion-row class="todaySpecialRow">

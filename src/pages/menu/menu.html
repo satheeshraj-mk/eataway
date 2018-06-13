@@ -8,38 +8,46 @@
 
 
 <ion-content padding>
-  <ion-row class="full-width menu-head" >
+  <ion-row class="full-width menu-head">
     Menu
   </ion-row>
   <ion-row class="sub-menu full-width" center>
-    <ion-col class="menu-item active">Dinner</ion-col>
-    <ion-col>Snaks</ion-col>
-    <ion-col>Lunch</ion-col>
+    <ion-col><ion-item class="menu-item " [ngClass]="{'acitve':activeMenu==='Dinner'}" (click)="changeMenu('Dinner')">Dinner</ion-item></ion-col>
+    <ion-col><ion-item class="menu-item " [ngClass]="{'acitve':activeMenu==='Snacks'}" (click)="changeMenu('Snacks')">Snaks</ion-item></ion-col>
+    <ion-col><ion-item class="menu-item " [ngClass]="{'acitve':activeMenu==='Lunch'}" (click)="changeMenu('Lunch')">Lunch</ion-item></ion-col>
   </ion-row>
   <ion-card class="menu">
     <ion-slides>
-      <ion-slide >
+      <ion-slide *ngFor="let item of itemList">
         <ion-grid style="height: 100%;">
           <ion-row class="firstRow">
             <ion-col col-5>
-              <img src="../../assets/imgs/irachichoru.jpg">
+              <img src="{{item.imgPath}}">
             </ion-col>
             <ion-col col-7>
-              <ion-item>Price : </ion-item>
-              <ion-item><ion-label>Qty   : </ion-label> <ion-input type="text" class="qtyInput"></ion-input> </ion-item>
-              <ion-item> <button ion-button small>Order</button></ion-item>
+              <ion-item>Price : {{item.price}}</ion-item>
+              <ion-item>
+                <ion-label>Qty : </ion-label>
+                <ion-input type="text" class="qtyInput"></ion-input>
+              </ion-item>
+              <ion-item>
+                <button ion-button small>Order</button>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </ion-item>
             </ion-col>
           </ion-row>
           <ion-row class="secondRow">
-            description
+            <span class="itemTitle">{{item.title}}</span>
+            <br>
+            <p>{{item.description}}</p>
           </ion-row>
         </ion-grid>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 2</h1>
-      </ion-slide>
-      <ion-slide>
-        <h1>Slide 3</h1>
       </ion-slide>
     </ion-slides>
   </ion-card>

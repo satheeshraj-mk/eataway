@@ -9,6 +9,12 @@ page-menu {
 .menu .slide-zoom{
     height: 100%;
 }
+.menu-item.item-md.item-block .item-inner{
+    border-bottom: 0;
+}
+.menu-item.item.item-block.item-md.acitve .item-inner{
+    border-bottom: 1px solid blueviolet;
+}
 .firstRow,
 .secondRow{
     height: 50%;
@@ -21,4 +27,8 @@ page-menu {
     width: 30px;
     margin: 0;
     border: 1px solid;
+}
+.itemTitle{
+    font-weight: bold;
+    
 }

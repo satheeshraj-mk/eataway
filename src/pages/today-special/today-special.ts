@@ -26,7 +26,7 @@ export class TodaySpecialPage {
   }
 
   showMenuDetails(){
-    this.menuPage=MenuPage;
+    this.navCtrl.push(MenuPage);
   }
 
 }

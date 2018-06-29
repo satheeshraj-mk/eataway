@@ -19,6 +19,9 @@ page-menu {
 .secondRow{
     height: 50%;
 }
+.secondRow{
+    padding-top: 10px;
+}
 .firstRow img{
     height: 100%;
 }
@@ -30,5 +33,11 @@ page-menu {
 }
 .itemTitle{
     font-weight: bold;
+    padding-top: 5px;
     
+}
+.secondRow .foodType{
+    height: 25px;
+    width: 25px;
+    margin-left: 10px;
 }

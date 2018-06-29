@@ -31,7 +31,7 @@
                 <ion-input type="text" class="qtyInput"></ion-input>
               </ion-item>
               <ion-item>
-                <button ion-button small>Order</button>
+                <button ion-button small (click)="addToCart(item)">+</button>
               </ion-item>
               <ion-item>
                 <ion-icon name="star"></ion-icon>
@@ -44,6 +44,8 @@
           </ion-row>
           <ion-row class="secondRow">
             <span class="itemTitle">{{item.title}}</span>
+            <img class="foodType" *ngIf="item.type==='Y'" src="../../assets/icon/veg.png" >
+            <img class="foodType" *ngIf="item.type==='N'" src="../../assets/icon/nonveg.png">
             <br>
             <p>{{item.description}}</p>
           </ion-row>

@@ -108,7 +108,7 @@ export class MenuPage {
     console.log("sf " + this.activeMenu);
   }
   addToCart(item) {
-    this.communicationService.updateItemsCount(this.itemCount++);
+    this.communicationService.updateItemsCount(item);
   }
   changeMenu(menuName) {
     this.activeMenu = menuName;

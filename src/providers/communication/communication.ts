@@ -9,16 +9,18 @@ import { Subject } from 'rxjs/Subject';
 */
 @Injectable()
 export class CommunicationProvider {
-
+  private selectedItems:Array<any>=[];
+  
   private itemsCount = new Subject<number>();
   itemsCount$ = this.itemsCount.asObservable();
-  updateItemsCount(count: number) {
-    this.itemsCount.next(count);
+  updateItemsCount(item: any) {
+    this.selectedItems.push(item);
+    this.itemsCount.next(this.selectedItems.length);
   }
-  getItemCount(){
-    return this.itemsCount;
+  
+  fetchSelectedItems(){
+    return this.selectedItems;
   }
-
 
 
 

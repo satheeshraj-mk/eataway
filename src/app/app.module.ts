@@ -14,6 +14,7 @@ import { TodaySpecialPage } from '../pages/today-special/today-special'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CommunicationProvider } from '../providers/communication/communication';
+import { CartsPage } from '../pages/carts/carts';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CommunicationProvider } from '../providers/communication/communication'
     ContactPage,
     MenuPage,
     TabsPage,
-    TodaySpecialPage
+    TodaySpecialPage,
+    CartsPage
 
   ],
   imports: [
@@ -40,7 +42,8 @@ import { CommunicationProvider } from '../providers/communication/communication'
     ContactPage,
     MenuPage,
     TabsPage,
-    TodaySpecialPage
+    TodaySpecialPage,
+    CartsPage
   ],
   providers: [
     StatusBar,

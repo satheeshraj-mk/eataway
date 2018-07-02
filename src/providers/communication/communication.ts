@@ -14,7 +14,20 @@ export class CommunicationProvider {
   private itemsCount = new Subject<number>();
   itemsCount$ = this.itemsCount.asObservable();
   updateItemsCount(item: any) {
-    this.selectedItems.push(item);
+    var i=0;
+    var isNewItem=true;
+    //Check for item already added in the array, If added just update its quantity
+    for(i=0;i<this.selectedItems.length;i++){
+      if(this.selectedItems[i].itemId===item.itemId){
+        this.selectedItems[i].quantity=item.quantity;
+        isNewItem=false;
+      }
+    }
+    //If the item is new item , just push it into the selectedItems array
+    if(isNewItem){
+      this.selectedItems.push(item);
+    }
+    
     this.itemsCount.next(this.selectedItems.length);
   }
   

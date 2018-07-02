@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CommunicationProvider } from '../providers/communication/communication';
 import { CartsPage } from '../pages/carts/carts';
+import { DataProvider } from '../providers/data/data';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { CartsPage } from '../pages/carts/carts';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    CommunicationProvider
+    CommunicationProvider,
+    DataProvider
   ]
 })
 export class AppModule { }

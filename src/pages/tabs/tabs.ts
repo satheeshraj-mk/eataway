@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { TodaySpecialPage } from '../today-special/today-special';
+import { CommunicationProvider } from '../../providers/communication/communication';
+import { CartsPage } from '../carts/carts';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -10,10 +11,13 @@ import { TodaySpecialPage } from '../today-special/today-special';
 export class TabsPage {
 
   todaySpecial = TodaySpecialPage
-  tab2Root = AboutPage;
+  carts = CartsPage;
   tab3Root = ContactPage;
-
-  constructor() {
-
+  public itemCount:number;
+  constructor(private communicationService:CommunicationProvider) {
+    //Subscribe updated items count from the Menu list
+    this.communicationService.itemsCount$.subscribe(count=>{
+      this.itemCount=count;
+    })
   }
 }

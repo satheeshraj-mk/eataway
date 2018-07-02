@@ -13,6 +13,9 @@ import { TodaySpecialPage } from '../pages/today-special/today-special'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CommunicationProvider } from '../providers/communication/communication';
+import { CartsPage } from '../pages/carts/carts';
+import { DataProvider } from '../providers/data/data';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     MenuPage,
     TabsPage,
-    TodaySpecialPage
+    TodaySpecialPage,
+    CartsPage
 
   ],
   imports: [
@@ -39,12 +43,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     MenuPage,
     TabsPage,
-    TodaySpecialPage
+    TodaySpecialPage,
+    CartsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    CommunicationProvider,
+    DataProvider
   ]
 })
 export class AppModule { }

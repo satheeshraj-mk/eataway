@@ -17,12 +17,17 @@ import { CommunicationProvider } from '../../providers/communication/communicati
 export class CartsPage {
 
   private selectedItems:Array<any>=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams,private communicationService:CommunicationProvider) {
+  constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private communicationService:CommunicationProvider) {
     
   }
 
   ionViewDidLoad() {
     this.selectedItems=this.communicationService.fetchSelectedItems();
+  }
+  removeItem(item:any){
+    this.communicationService.removeItem(item);
   }
 
 }

@@ -30,6 +30,15 @@ export class CommunicationProvider {
     
     this.itemsCount.next(this.selectedItems.length);
   }
+  removeItem(item:any){
+    var i=0;
+    for(i=0;i<this.selectedItems.length;i++){
+      if(this.selectedItems[i].itemId===item.itemId){
+        this.selectedItems.splice(i,1);
+      }
+    }
+    this.itemsCount.next(this.selectedItems.length);
+  }
   
   fetchSelectedItems(){
     return this.selectedItems;

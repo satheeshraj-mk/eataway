@@ -19,12 +19,12 @@
           <ion-item-sliding>
             <ion-item>
               <ion-avatar item-start>
-                <img src=""><!--image url of the selected item-->
+                <img src="{{item.imgPath}}">
               </ion-avatar>
               {{item.title}} {{item.quantity}} {{item.price*item.quantity}}
             </ion-item>
             <ion-item-options side="right">
-                <button ion-button color="danger"> Delete</button>
+                <button ion-button color="danger" (click)="removeItem(item)"> Delete</button>
             </ion-item-options>
           </ion-item-sliding>
         </ion-list>

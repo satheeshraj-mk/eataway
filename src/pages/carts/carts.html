@@ -14,11 +14,28 @@
 
 
 <ion-content padding>
-  <ion-card>
-    <ion-list *ngFor="let item of selectedItems">
+  <ion-card *ngFor="let item of selectedItems">
+      <ion-list>
+          <ion-item-sliding>
+            <ion-item>
+              <ion-avatar item-start>
+                <img src=""><!--image url of the selected item-->
+              </ion-avatar>
+              {{item.title}} {{item.quantity}} {{item.price*item.quantity}}
+            </ion-item>
+            <ion-item-options side="right">
+                <button ion-button color="danger"> Delete</button>
+            </ion-item-options>
+          </ion-item-sliding>
+        </ion-list>
+
+
+
+
+  <!--  <ion-list *ngFor="let item of selectedItems">
       <ion-item>{{item.title}} {{item.quantity}} {{item.price*item.quantity}}
         Remove
       </ion-item>
-    </ion-list>
+    </ion-list>-->
   </ion-card>
 </ion-content>

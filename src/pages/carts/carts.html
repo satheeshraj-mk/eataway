@@ -12,9 +12,32 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <ion-card *ngFor="let item of selectedItems">
+
+
+    <ion-list>
+      <ion-item>
+        <ion-row>
+          <ion-avatar>
+            <img src="{{item.imgPath}}">
+          </ion-avatar>
+          <ion-col>
+            <div>{{item.title}}</div>
+          </ion-col>
+          <ion-col>
+            <div>Rs: {{item.price*item.quantity}} x {{item.quantity}}</div>
+          </ion-col>
+          <ion-col class="cart-delete-button">
+            <button ion-button icon-left clear small (click)="removeItem(item)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    <!--<ion-card *ngFor="let item of selectedItems">
       <ion-list>
           <ion-item-sliding>
             <ion-item>

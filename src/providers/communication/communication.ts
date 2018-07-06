@@ -43,7 +43,14 @@ export class CommunicationProvider {
   fetchSelectedItems(){
     return this.selectedItems;
   }
-
+  getTotalPrice(){
+    var totalPrice=0;
+    var i=0;
+    for(i=0;i<this.selectedItems.length;i++){
+      totalPrice=totalPrice+(this.selectedItems[i].price*this.selectedItems[i].quantity);
+    }
+    return totalPrice;
+  }
 
 
 }

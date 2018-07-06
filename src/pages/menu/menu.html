@@ -28,7 +28,7 @@
               <ion-item>Price : {{item.price}}</ion-item>
               <ion-item>
                 <ion-label>Qty : </ion-label>
-                <ion-input type="text" class="qtyInput"></ion-input>
+                <ion-input type="text" [(ngModel)]="item.quantity" class="qtyInput"></ion-input>
               </ion-item>
               <ion-item>
                 <button ion-button small (click)="addToCart(item)">+</button>

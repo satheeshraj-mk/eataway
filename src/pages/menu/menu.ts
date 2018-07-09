@@ -3,6 +3,9 @@ import { NavController } from 'ionic-angular';
 import { CommunicationProvider } from '../../providers/communication/communication';
 import { DataProvider } from '../../providers/data/data';
 
+import {ViewChild} from '@angular/core';
+import {Slides} from 'ionic-angular';
+
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html'
@@ -15,6 +18,9 @@ export class MenuPage {
   private activeMenu: String;
   private itemList;
   private itemCount:number;
+
+  @ViewChild(Slides) slides:Slides;
+
   constructor(public navCtrl: NavController,private communicationService:CommunicationProvider, private dataService:DataProvider) {
     this.activeMenu = 'Dinner';
     this.dinnerList=this.dataService.getDinnerList();
@@ -30,7 +36,7 @@ export class MenuPage {
   changeMenu(menuName) {
     this.activeMenu = menuName;
     this.itemList = [];
-
+    this.slides.slideTo(0);
     if (this.activeMenu === 'Dinner') {
       this.itemList = this.dinnerList;
     } else if (this.activeMenu === 'Snacks') {

@@ -17,18 +17,23 @@
 
 
     <ion-list>
-      <ion-item>
+      <ion-item class="cartItems">
         <ion-row>
-          <ion-avatar>
-            <img src="{{item.imgPath}}">
-          </ion-avatar>
-          <ion-col>
-            <div>{{item.title}}</div>
+          <ion-col col-2>
+            <ion-avatar>
+              <img src="{{item.imgPath}}">
+            </ion-avatar>
           </ion-col>
-          <ion-col>
-            <div>Rs: {{item.price*item.quantity}} x {{item.quantity}}</div>
+          <ion-col col-4>
+            <div class="textItem">{{item.title}}</div>
           </ion-col>
-          <ion-col class="cart-delete-button">
+          <ion-col col-1>
+            <div class="textItem">{{item.quantity}}</div>
+          </ion-col>
+          <ion-col col-3>
+            <div class="textItem">Rs: {{item.price*item.quantity}}</div>
+          </ion-col>
+          <ion-col col-2 >
             <button ion-button icon-left clear small (click)="removeItem(item)">
               <ion-icon name="trash"></ion-icon>
             </button>
@@ -63,7 +68,7 @@
   </ion-card>
   <div class="confirmOrder">
     <span class="leftSide">{{selectedItems.length}}</span>
-    <span>Place Order</span> 
+    <span>Place Order</span>
     <span class="rightSide">909</span>
   </div>
 </ion-content>

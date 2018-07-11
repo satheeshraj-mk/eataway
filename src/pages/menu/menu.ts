@@ -5,6 +5,7 @@ import { DataProvider } from '../../providers/data/data';
 
 import {ViewChild} from '@angular/core';
 import {Slides} from 'ionic-angular';
+import { CartsPage } from '../carts/carts';
 
 @Component({
   selector: 'page-menu',
@@ -46,6 +47,9 @@ export class MenuPage {
     }
 
 
+  }
+  navigateToCart(){
+    this.navCtrl.setRoot(CartsPage);
   }
 
 }

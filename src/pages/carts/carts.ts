@@ -18,6 +18,8 @@ export class CartsPage{
 
   private selectedItems:Array<any>=[];
   private totalPrice:number;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   constructor(public navCtrl: NavController, 
     public navParams: NavParams,
     private communicationService:CommunicationProvider) {
@@ -34,7 +36,7 @@ export class CartsPage{
     var i=0;
     var temp;
     this.totalPrice=0;
-
+    
     //calculating TotalPrice
     for(i=0;i<this.selectedItems.length;i++){
       temp=this.selectedItems[i].quantity*this.selectedItems[i].price;

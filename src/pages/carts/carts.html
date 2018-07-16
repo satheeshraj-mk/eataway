@@ -42,6 +42,9 @@
       </ion-item>
     </ion-list>
   </ion-card>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
 </ion-content>
 <ion-footer no-shadow class="confirmOrder">
   <ion-toolbar position="bottom">

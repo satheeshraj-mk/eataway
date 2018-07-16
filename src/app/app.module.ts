@@ -17,6 +17,10 @@ import { CommunicationProvider } from '../providers/communication/communication'
 import { CartsPage } from '../pages/carts/carts';
 import { DataProvider } from '../providers/data/data';
 
+
+import { AgmCoreModule } from '@agm/core';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -32,7 +36,8 @@ import { DataProvider } from '../providers/data/data';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({apiKey:'AIzaSyB3Qtit9ifizkxcfXjfsYqZDd-6dElBG-o'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [

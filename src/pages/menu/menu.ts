@@ -20,7 +20,6 @@ export class MenuPage {
   private itemList;
   private itemCount:number;
 
-  private tab:Tabs;
   @ViewChild(Slides) slides:Slides;
 
   constructor(public navCtrl: NavController,private communicationService:CommunicationProvider, private dataService:DataProvider) {

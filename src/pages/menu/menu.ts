@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Tabs } from 'ionic-angular';
 import { CommunicationProvider } from '../../providers/communication/communication';
 import { DataProvider } from '../../providers/data/data';
 
@@ -20,6 +20,7 @@ export class MenuPage {
   private itemList;
   private itemCount:number;
 
+  private tab:Tabs;
   @ViewChild(Slides) slides:Slides;
 
   constructor(public navCtrl: NavController,private communicationService:CommunicationProvider, private dataService:DataProvider) {
@@ -29,7 +30,7 @@ export class MenuPage {
     this.lunchList=this.dataService.getLunchList();
     this.itemList = this.dinnerList;
     this.itemCount=0;
-    console.log("sf " + this.activeMenu);
+
   }
   addToCart(item) {
     this.communicationService.updateItemsCount(item);
@@ -49,7 +50,7 @@ export class MenuPage {
 
   }
   navigateToCart(){
-    this.navCtrl.setRoot(CartsPage);
+    this.navCtrl.push(CartsPage);
   }
 
 }

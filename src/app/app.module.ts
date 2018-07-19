@@ -10,6 +10,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegistrationPage } from '../pages/registration/registration';
 import { TodaySpecialPage } from '../pages/today-special/today-special'
+import {OrdersPage} from '../pages/orders/orders';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,7 +32,8 @@ import { AgmCoreModule } from '@agm/core';
     MenuPage,
     TabsPage,
     TodaySpecialPage,
-    CartsPage
+    CartsPage,
+    OrdersPage
 
   ],
   imports: [
@@ -49,7 +51,8 @@ import { AgmCoreModule } from '@agm/core';
     MenuPage,
     TabsPage,
     TodaySpecialPage,
-    CartsPage
+    CartsPage,
+    OrdersPage
   ],
   providers: [
     StatusBar,

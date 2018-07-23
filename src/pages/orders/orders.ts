@@ -18,7 +18,7 @@ import { CommunicationProvider } from '../../providers/communication/communicati
 export class OrdersPage {
   private selectedItems:Array<any>=[];
   
-  private totalPrice:number;
+  // private totalPrice:number;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private communicationService:CommunicationProvider) {
   }

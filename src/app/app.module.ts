@@ -39,7 +39,10 @@ import { AgmCoreModule } from '@agm/core';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AgmCoreModule.forRoot({apiKey:'AIzaSyB3Qtit9ifizkxcfXjfsYqZDd-6dElBG-o'})
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyB3Qtit9ifizkxcfXjfsYqZDd-6dElBG-o',
+      libraries: ["places"]
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

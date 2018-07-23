@@ -44,9 +44,9 @@
   </ion-card>
   <ion-item>
     <ion-label floating>Enter Address</ion-label>
-    <ion-input id="txtHome" type="text"></ion-input>
+    <ion-input id="txtLocationSearchBox" type="text"></ion-input>
 </ion-item>
-  <agm-map  [latitude]="lat" [longitude]="lng">
+  <agm-map  [latitude]="lat" [longitude]="lng" [zoom]="zoom">
     <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
   </agm-map>
 </ion-content>

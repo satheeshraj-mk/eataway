@@ -2,6 +2,7 @@ import { Component,ElementRef,ViewChild,NgZone} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CommunicationProvider } from '../../providers/communication/communication';
 import { MapsAPILoader } from '../../../node_modules/@agm/core';
+import { } from 'googlemaps';
 
 /**
  * Generated class for the CartsPage page.
@@ -19,50 +20,23 @@ export class CartsPage{
 
   private selectedItems:Array<any>=[];
   private totalPrice:number;
-  lat: number;
-  lng: number;
-  zoom:number;
-  marker:any;
+  private lat: number;
+  private lng: number;
+  private zoom:number;
   @ViewChild("search")
   public searchElementRef: ElementRef;
 
   constructor(public navCtrl: NavController, 
-    public navParams: NavParams,
-    private communicationService:CommunicationProvider,
-    private mapsAPILoader:MapsAPILoader,
-    private ngZone:NgZone) {
-
-    console.log("Constructor");
-    
-
+      public navParams: NavParams,
+      private communicationService:CommunicationProvider,
+      private mapsAPILoader:MapsAPILoader,
+      private ngZone:NgZone) {
+      this.zoom=12;
   }
-
   
   ionViewDidLoad() {
     this.selectedItems=this.communicationService.fetchSelectedItems();
-    //load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-      let nativeHomeInputBox = document.getElementById('txtHome').getElementsByTagName('input')[0];
-      let autocomplete = new google.maps.places.Autocomplete(nativeHomeInputBox, {
-          types: ["address"]
-      });
-      autocomplete.addListener("place_changed", () => {
-          this.ngZone.run(() => {
-              //get the place result
-              let place: google.maps.places.PlaceResult = autocomplete.getPlace();
-
-              //verify result
-              if (place.geometry === undefined || place.geometry === null) {
-                  return;
-              }
-
-              //set latitude, longitude and zoom
-              this.lat = place.geometry.location.lat();
-              this.lng = place.geometry.location.lng();
-              this.zoom = 50;
-          });
-      });
-  });
+    this.autoPopulateAdress();
   }
   /**
    * ionViewDidEnter():Fired when entering a page, after it becomes the active page.
@@ -94,6 +68,30 @@ export class CartsPage{
         // this.map.pan
       });
     }
+  }
+  autoPopulateAdress(){
+    //load Places Autocomplete
+    this.mapsAPILoader.load().then(() => {
+        let serchLoactionInput = document.getElementById('txtLocationSearchBox').getElementsByTagName('input')[0];
+        let autocomplete = new google.maps.places.Autocomplete(serchLoactionInput, {
+            types: ["address"]
+        });
+        autocomplete.addListener("place_changed", () => {
+            this.ngZone.run(() => {
+                //get the place result
+                let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+                //verify result
+                if (place.geometry === undefined || place.geometry === null) {
+                    return;
+                }
+                //set latitude, longitude and zoom
+                this.lat = place.geometry.location.lat();
+                this.lng = place.geometry.location.lng();
+                this.zoom = 12;
+            });
+        });
+    });
   }
 
 }
